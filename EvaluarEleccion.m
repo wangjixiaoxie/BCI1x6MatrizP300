@@ -1,4 +1,4 @@
-function [ output_args ] = EvaluarEleccion(MatrizFilas ,MatrizColumnas,elec,varargin )
+function [ output_args ] = EvaluarEleccion(MatrizColumnas,elec,varargin )
 %function [ output_args ] = EvaluarEleccion(EleccionSi ,EleccionNo,eleccion,varargin )
 %   Recibe MatrizFilas y MatrizColumnas, y comparando las energias de cada 
 %   señal, elige la de mayor valor. La matriz "define" con los caracteres se 
@@ -9,7 +9,7 @@ function [ output_args ] = EvaluarEleccion(MatrizFilas ,MatrizColumnas,elec,vara
 
 %% Procesamiento de los argumentos
 
-    if( nargin >= 5 )
+    if( nargin >= 4 )
         
         inicioP300=varargin{1};
         finP300=varargin{2};
@@ -25,25 +25,18 @@ function [ output_args ] = EvaluarEleccion(MatrizFilas ,MatrizColumnas,elec,vara
     end
 
 %% Toma de decision
-    M_Caracteres=['a','b','c','d','e','f';'g','h','i','j','k','l';...
-        'm','n','o','p','q','r';'s','t','u','v','w','x';'y','z','0',...
-        '1','2','3';'4','5','6','7','8','9'];
+    M_Caracteres=['a','b','c','d','e','f'];
     
-    EmaxFila=[-1,-1];
     EmaxColumna=[-1,-1];
     
     for i=1:6
-        res=CalculoEnergia(MatrizFilas(i,:));
-        res2=CalculoEnergia(MatrizColumnas(i,:)); 
-        if( res > EmaxFila(1,1) )
-            EmaxFila=[res,i];
-        end   
-        if( res2 > EmaxColumna(1,1) )
-            EmaxColumna=[res2,i];
+        res=CalculoEnergia(MatrizColumnas(i,:));   
+        if( res > EmaxColumna(1,1) )
+            EmaxColumna=[res,i];
         end
     end
     
-    Eleccion = M_Caracteres(EmaxFila(1,2),EmaxColumna(1,2));
+    Eleccion = M_Caracteres(EmaxColumna(1,2));
   
     fprintf('\n Archivo: %s ',path);
     textoEleccion=fprintf('\n\tEleccion#%d, fue elegido el caracter %c \r',elec,Eleccion);

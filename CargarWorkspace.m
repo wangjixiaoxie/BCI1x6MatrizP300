@@ -1,14 +1,14 @@
-function [CH_AF3,CH_F7,CH_F3,CH_FC5,CH_T7,CH_P7,CH_01,CH_02,CH_P8,CH_T8,CH_FC6,CH_F4,CH_F8,CH_AF4,CH_CMS,CH_DRL,MARKET ] = CargarWorkspace(route)
+function [CH_AF3,CH_F7,CH_F3,CH_FC5,CH_T7,CH_P7,CH_01,CH_02,CH_P8,CH_T8,CH_FC6,CH_F4,CH_F8,CH_AF4,CH_CMS,CH_DRL,MARKER ] = CargarWorkspace(route)
 % parametro route     - Numero de figura para ventana de ploteo
 %
 % retorna   canales: AF3 F7 F3 FC5 T7 P7 01 02 P8 T8 FC6 F4 F8 AF4 CMS DRL
 % retorna   market
 
 path = route;
-formats = '%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f';
+formats = '%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f%f'; %eran 36 %f , ahora son 40
 headerLines = 1;
 delimiter = ',';
-[M{1:36}] = textread(path, formats,'headerlines', headerLines, 'delimiter', delimiter);
+[M{1:40}] = textread(path, formats,'headerlines', headerLines, 'delimiter', delimiter);
 
 CH_AF3  = M{3};
 CH_F7   = M{4};
@@ -26,6 +26,6 @@ CH_F8   = M{15};
 CH_AF4  = M{16};
 CH_CMS  = M{32};
 CH_DRL  = M{33};
-MARKET  = M{36};
+MARKER  = M{20};%Antes era 36, ahora es 20
 
 end
