@@ -1,5 +1,5 @@
-# BCI6x6MatrizP300
-BCI en una matriz de 6x6 utilizando paradigma p300
+# BCI1x6MatrizP300
+BCI en una matriz de 1x6 utilizando paradigma p300
 
 Proyecto realizado en la Universidad Tecnológica Nacional - Facultad Regional Buenos Aires. 
 
