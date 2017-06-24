@@ -38,15 +38,16 @@ fs              = 128;
 % path = './estudios/matriz/silvio-1-19.05.17-19.06.39.csv';
 
 % path = './estudios/matriz/Balbi-A-09.06.17-18.57.51.csv'; %b - MAL
-% path = './estudios/matriz/Balbi-B-09.06.17-19.01.33.csv'; %c - BIEN
+% path = './estudios/Software1x6/PrimeraPrueba/Balbi-B-09.06.17-19.01.33.csv'; %c - BIEN
 % path = './estudios/matriz/Balbi-C-09.06.17-19.05.28.csv'; %d - BIEN
 % path = './estudios/matriz/niro-A-09.06.17-18.45.00.csv';  %e  - MAL 
 % path = './estudios/matriz/Niro-B-09.06.17-18.48.32.csv';  %b - MAL
 % path = './estudios/matriz/Niro-C-09.06.17-18.52.18.csv';  %a - MAL
 
-path = './Estudios/Software1x6/.csv';
-
-
+%% Carga de datos del estudio EEG (23 junio)
+%path = './Estudios/Software1x6/Registro1-1-23.06.17-18.00.26.csv';
+%path = './Estudios/Software1x6/Registro3-3-23.06.17-18.11.31.csv';
+path = './Estudios/Software1x6/Registro7-7-23.06.17-18.39.52.csv';
 
 nEleccion = 1;
 
