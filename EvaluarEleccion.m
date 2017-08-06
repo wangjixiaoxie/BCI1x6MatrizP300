@@ -29,8 +29,17 @@ function [ output_args ] = EvaluarEleccion(MatrizColumnas,elec,varargin )
     
     EmaxColumna=[-1,-1];
     
+    % Horrible pero es la forma rápida que encontre porque tenia problemas
+    % con los cell array
+    Matriz(1,:) = MatrizColumnas{1,1};
+    Matriz(2,:) = MatrizColumnas{2,1};
+    Matriz(3,:) = MatrizColumnas{3,1};
+    Matriz(4,:) = MatrizColumnas{4,1};
+    Matriz(5,:) = MatrizColumnas{5,1};
+    Matriz(6,:) = MatrizColumnas{6,1};
+    
     for i=1:6
-        res=CalculoEnergia(MatrizColumnas(i,:));   
+        res=CalculoEnergia(Matriz(i,:));   
         if( res > EmaxColumna(1,1) )
             EmaxColumna=[res,i];
         end
